@@ -29,7 +29,7 @@ public class DeckOfCards {
     }
 
     /**
-     * Deals n random cards from the deck (without removing them).
+     * Deals n random cards from the deck.
      *
      * @param n number of cards to deal, between 1 and 52
      * @return a list of n randomly chosen cards

@@ -29,7 +29,7 @@ public class HandOfCards {
     }
 
     /**
-     * Returns the sum of all face values in the hand (Ace = 1).
+     * Returns the sum of all face values in the hand.
      *
      * @return sum of face values
      */
@@ -40,7 +40,7 @@ public class HandOfCards {
     }
 
     /**
-     * Returns a formatted string of all heart cards, e.g. "H4 H9 H12".
+     * Returns a formatted string of all heart cards.
      * Returns "No Hearts" if there are no heart cards in the hand.
      *
      * @return formatted string of heart cards, or "No Hearts"
@@ -54,7 +54,7 @@ public class HandOfCards {
     }
 
     /**
-     * Checks whether the Queen of Spades (S12) is in the hand.
+     * Checks whether the Queen of Spades is in the hand.
      *
      * @return true if the Queen of Spades is present
      */
@@ -64,7 +64,7 @@ public class HandOfCards {
     }
 
     /**
-     * Checks whether the hand is a 5-flush (all 5 cards of the same suit).
+     * Checks whether the hand is a 5-flush.
      * Only meaningful when the hand contains exactly 5 cards.
      *
      * @return true if all cards share the same suit
@@ -78,7 +78,7 @@ public class HandOfCards {
     }
 
     /**
-     * Returns all cards as a space-separated string, e.g. "H4 S12 D7".
+     * Returns all cards as a space-separated string.
      *
      * @return string representation of the hand
      */

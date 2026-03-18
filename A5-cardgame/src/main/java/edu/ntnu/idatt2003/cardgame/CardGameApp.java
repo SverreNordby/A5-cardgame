@@ -40,7 +40,7 @@ public class CardGameApp extends Application {
 
         StackPane cardArea = new StackPane(handLabel);
         cardArea.setStyle("-fx-border-color: #888; -fx-border-width: 2; -fx-background-color: #e8f5e9;");
-        cardArea.setPrefSize(400, 200);
+        cardArea.setPrefSize(600, 300);
 
         // --- Buttons ---
         Button dealButton = new Button("Deal Hand");
@@ -82,7 +82,7 @@ public class CardGameApp extends Application {
         root.setPadding(new Insets(20));
         root.setAlignment(Pos.CENTER);
 
-        primaryStage.setScene(new Scene(root, 620, 340));
+        primaryStage.setScene(new Scene(root, 930, 510));
         primaryStage.setResizable(false);
         primaryStage.show();
     }

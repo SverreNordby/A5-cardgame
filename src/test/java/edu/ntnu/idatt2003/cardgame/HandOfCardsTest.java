@@ -22,6 +22,24 @@ class HandOfCardsTest {
     }
 
     @Test
+    void sumOfFaces_singleCard() {
+        HandOfCards hand = new HandOfCards(List.of(new PlayingCard('C', 13)));
+        assertEquals(13, hand.sumOfFaces());
+    }
+
+    @Test
+    void sumOfFaces_allAces() {
+        List<PlayingCard> cards = List.of(
+                new PlayingCard('H', 1),
+                new PlayingCard('S', 1),
+                new PlayingCard('D', 1),
+                new PlayingCard('C', 1)
+        );
+        HandOfCards hand = new HandOfCards(cards);
+        assertEquals(4, hand.sumOfFaces());
+    }
+
+    @Test
     void heartsAsString_returnsHeartCards() {
         List<PlayingCard> cards = List.of(
                 new PlayingCard('H', 12),
@@ -46,6 +64,17 @@ class HandOfCardsTest {
         );
         HandOfCards hand = new HandOfCards(cards);
         assertEquals("No Hearts", hand.heartsAsString());
+    }
+
+    @Test
+    void heartsAsString_allHeartsDoesNotContainNoHearts() {
+        List<PlayingCard> cards = List.of(
+                new PlayingCard('H', 1),
+                new PlayingCard('H', 2),
+                new PlayingCard('H', 3)
+        );
+        HandOfCards hand = new HandOfCards(cards);
+        assertNotEquals("No Hearts", hand.heartsAsString());
     }
 
     @Test
@@ -82,6 +111,19 @@ class HandOfCardsTest {
     }
 
     @Test
+    void isFlush_trueForAllSpades() {
+        List<PlayingCard> cards = List.of(
+                new PlayingCard('S', 2),
+                new PlayingCard('S', 4),
+                new PlayingCard('S', 6),
+                new PlayingCard('S', 8),
+                new PlayingCard('S', 10)
+        );
+        HandOfCards hand = new HandOfCards(cards);
+        assertTrue(hand.isFlush());
+    }
+
+    @Test
     void isFlush_falseForMixedSuits() {
         List<PlayingCard> cards = List.of(
                 new PlayingCard('H', 1),
@@ -103,5 +145,17 @@ class HandOfCardsTest {
         );
         HandOfCards hand = new HandOfCards(cards);
         assertFalse(hand.isFlush());
+    }
+
+    @Test
+    void getHandAsString_containsAllCards() {
+        List<PlayingCard> cards = List.of(
+                new PlayingCard('H', 4),
+                new PlayingCard('S', 12)
+        );
+        HandOfCards hand = new HandOfCards(cards);
+        String result = hand.getHandAsString();
+        assertTrue(result.contains("H4"));
+        assertTrue(result.contains("S12"));
     }
 }

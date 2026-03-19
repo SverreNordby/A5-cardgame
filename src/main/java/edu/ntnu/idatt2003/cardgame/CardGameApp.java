@@ -44,11 +44,11 @@ public class CardGameApp extends Application {
 
         // --- Buttons ---
         Button dealButton = new Button("Deal Hand");
-        dealButton.setPrefWidth(130);
+        dealButton.setPrefWidth(150);
         dealButton.setOnAction(e -> dealHand());
 
         Button checkButton = new Button("Check Hand");
-        checkButton.setPrefWidth(130);
+        checkButton.setPrefWidth(150);
         checkButton.setOnAction(e -> checkHand());
 
         VBox buttonBox = new VBox(15, dealButton, checkButton);
@@ -65,7 +65,7 @@ public class CardGameApp extends Application {
 
         GridPane infoGrid = new GridPane();
         infoGrid.setHgap(10);
-        infoGrid.setVgap(8);
+        infoGrid.setVgap(10);
         infoGrid.setAlignment(Pos.CENTER_LEFT);
 
         infoGrid.add(new Label("Sum of faces:"), 0, 0);
@@ -78,11 +78,11 @@ public class CardGameApp extends Application {
         infoGrid.add(queenField, 3, 1);
 
         // --- Root layout ---
-        VBox root = new VBox(20, topArea, infoGrid);
-        root.setPadding(new Insets(20));
+        VBox root = new VBox(50, topArea, infoGrid);
+        root.setPadding(new Insets(120));
         root.setAlignment(Pos.CENTER);
 
-        primaryStage.setScene(new Scene(root, 930, 510));
+        primaryStage.setScene(new Scene(root, 1000, 600));
         primaryStage.setResizable(false);
         primaryStage.show();
     }
@@ -91,7 +91,6 @@ public class CardGameApp extends Application {
         currentHand = new HandOfCards(deck.dealHand(5));
         handLabel.setText(currentHand.getHandAsString());
 
-        // Clear analysis fields until user presses Check Hand
         sumField.clear();
         heartsField.clear();
         flushField.clear();
